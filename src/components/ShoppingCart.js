@@ -3,7 +3,7 @@ import CartContext from "../contexts/CartContext";
 import Item from './ShoppingCartItem';
 
 function ShoppingCart() {
-	const cart = useContext(CartContext);
+	const {cart} = useContext(CartContext);
 
 	function getCartTotal() {
 		return cart.reduce((acc, {price}) => acc + price, 0).toFixed(2);

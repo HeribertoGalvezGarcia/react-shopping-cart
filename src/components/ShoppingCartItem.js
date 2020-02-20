@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import CartContext from "../contexts/CartContext";
 
-function Item({image, title, price}) {
+function Item({id, image, title, price}) {
+	const {removeItem} = useContext(CartContext)
+
 	return (
 		<div className="shopping-cart_item">
 			<img src={image} alt={`${title} book`} />
 			<div>
 				<h1>{title}</h1>
 				<p>$ {price}</p>
-				<button>Remove from cart</button>
+				<button onClick={() => removeItem(id)}>Remove from cart</button>
 			</div>
 		</div>
 	);
