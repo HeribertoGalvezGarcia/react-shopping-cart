@@ -12,7 +12,7 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	function addItem(item) {
-		setCart(items => [...items, item]);
+		setCart(items => [...new Set([...items, item])]);
 	}
 
 	return (
